@@ -26,11 +26,11 @@ Config = {
 
     initGold               = 0.0,          -- Initial gold amount for new players.
 
-    initMoney              = 200.0,        -- Initial money amount for new players.
+    initMoney              = 0.0,        -- Initial money amount for new players.
 
     initRol                = 0.0,          -- Initial role-play currency amount for new players.
 
-    initInvCapacity        = 35.0,         -- Initial number of character inventory weight for new players. for old characters you must change in the database if you dont ave a new server
+    initInvCapacity        = 50.0,         -- Initial number of character inventory weight for new players. for old characters you must change in the database if you dont ave a new server
 
     initXp                 = 0,            -- Initial experience points for new players.
 
@@ -46,9 +46,9 @@ Config = {
 
     SavePlayersStatus      = false,        -- Future deprecated. Advised not to use, as it will be removed.
 
-    maxHealth              = 10,           -- Maximum health for players. 10 is full, 0 is empty.
+    maxHealth              = 1,           -- Maximum health for players. 10 is full, 0 is empty.
 
-    maxStamina             = 10,           -- Maximum stamina for players. 10 is full, 0 is empty.
+    maxStamina             = 1,           -- Maximum stamina for players. 10 is full, 0 is empty.
 
     PVP                    = true,         -- Enables player vs player combat.
 
@@ -75,7 +75,7 @@ Config = {
 
     HideOnlyDEADEYE        = true,  -- Hides only the Dead Eye core in the UI.
 
-    HidePlayersCore        = false, -- Hides player cores in the UI.
+    HidePlayersCore        = true, -- Hides player cores in the UI.
 
     HideHorseCores         = false, -- Hides horse cores in the UI.
 
@@ -102,19 +102,19 @@ Config = {
     --=============================================
 
 
-    HideUi                = false,      -- Shows or hides the overall UI.
+    HideUi                = true,      -- Shows or hides the overall UI.
 
-    HideGold              = false,      -- Disables the Gold UI for all players.
+    HideGold              = true,      -- Disables the Gold UI for all players.
 
-    HideMoney             = false,      -- Disables the Money UI for all players.
+    HideMoney             = true,      -- Disables the Money UI for all players.
 
-    HideLevel             = false,      -- Disables the Level UI for all players.
+    HideLevel             = true,      -- Disables the Level UI for all players.
 
-    HideID                = false,      -- Disables the ID UI for all players.
+    HideID                = true,      -- Disables the ID UI for all players.
 
-    HideTokens            = false,      -- Disables the Token UI for all players.
+    HideTokens            = true,      -- Disables the Token UI for all players.
 
-    HidePVP               = false,      -- Disables the PVP UI for all players.
+    HidePVP               = true,      -- Disables the PVP UI for all players.
 
     UIPosition            = 'TopRight', -- Sets the UI position on the screen. Options are 'TopRight', 'TopLeft', 'BottomRight', 'BottomLeft', 'MiddleRight', 'TopMiddle', 'BottomMiddle'.
 
@@ -140,9 +140,9 @@ Config = {
     --            MAP CONFIGURATIONS             --
     --=============================================
 
-    mapTypeOnFoot         = 3,     -- Radar type when on foot. 0 = Off, 1 = Regular, 2 = Expanded, 3 = Simple (compass).
+    mapTypeOnFoot         = 0,     -- Radar type when on foot. 0 = Off, 1 = Regular, 2 = Expanded, 3 = Simple (compass).
 
-    mapTypeOnMount        = 3,     -- Radar type when on horse. Same options as on foot.
+    mapTypeOnMount        = 0,     -- Radar type when on horse. Same options as on foot.
 
     enableTypeRadar       = false, -- Enables custom radar types if true, otherwise players use game settings.
 
@@ -154,17 +154,17 @@ Config = {
     --            RESPAWN SETTINGS               --
     --=============================================
 
-    HealthOnRespawn       = 500,                                  -- Player health after respawning at a hospital (max is 500).
+    HealthOnRespawn       = 100,                                  -- Player health after respawning at a hospital (max is 500).
 
     HealthOnResurrection  = 100,                                  -- Player health after being resurrected (max is 500).
 
     RagdollOnResurrection = true,                                 -- Enables ragdoll and revive effects upon resurrection.
 
-    HealthRecharge        = { enable = true, multiplier = 0.37 }, -- Auto-recharge for health, with a multiplier for speed.
+    HealthRecharge        = { enable = true, multiplier = 0.05 }, -- Auto-recharge for health, with a multiplier for speed.
 
-    StaminaRecharge       = { enable = true, multiplier = 0.4 },  -- Auto-recharge for stamina, with a multiplier for speed.
+    StaminaRecharge       = { enable = true, multiplier = 0.2 },  -- Auto-recharge for stamina, with a multiplier for speed.
 
-    RespawnTime           = 10,                                   -- Time in seconds before a player can respawn.
+    RespawnTime           = 120,                                   -- Time in seconds before a player can respawn.
 
     RespawnKey            = 0xDFF812F9,                           -- Key code for respawning (default is 'E').
 
@@ -181,24 +181,8 @@ Config = {
             name = "Valentine",
             pos = vector4(-283.83, 806.4, 119.38, 321.76), -- Vector4 coordinates: x, y, z, heading.
         },
-        SaintDenis = {
-            name = "Saint Denis",
-            pos = vector4(2721.4562, -1446.0975, 46.2303, 321.76),
-        },
-        Armadillo = {
-            name = "Armadillo",
-            pos = vector4(-3742.5, -2600.9, -13.23, 321.76),
-        },
-        Blackwater = {
-            name = "Black water",
-            pos = vector4(-723.9527, -1242.8358, 44.7341, 321.76),
-        },
-        Rhodes = {
-            name = "Rhodes",
-            pos = vector4(1229.0, -1306.1, 76.9, 321.76),
-        },
     },
-    ActiveEagleEye        = true,  -- Enables or disables Eagle Eye feature.
+    ActiveEagleEye        = false,  -- Enables or disables Eagle Eye feature.
 
     ActiveDeadEye         = false, -- Enables or disables Dead Eye feature.
 
@@ -208,7 +192,7 @@ Config = {
 
     DateTimeFormat        = "%d/%m/%y %H:%M:%S", -- Format for displaying date and time in ban notifications.
 
-    TimeZone              = " CET",              -- Set your server's timezone.
+    TimeZone              = " GMT",              -- Set your server's timezone.
 
     TimeZoneDifference    = 1,                   -- Time difference from UTC, used in the banning system.
 
@@ -220,7 +204,7 @@ Config = {
 
     SetUserDBadmin        = true,  -- If true, 'addGroup' command also sets admin status in the Users table.
 
-    SetBothDBadmin        = false, -- If true, 'addGroup' sets admin status in both Users and Characters tables.
+    SetBothDBadmin        = true, -- If true, 'addGroup' sets admin status in both Users and Characters tables.
 
     --===========================================
     --    DISCORD RICH PRESENCE INTEGRATION    --
